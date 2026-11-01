@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASCII VISION</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>ASCII VISION</h1>
+    <div class="subtitle">LIVE WEBCAM CHARACTER RENDERER</div>
+
+    <video id="video" autoplay playsinline muted></video>
+    <canvas id="canvas"></canvas>
+
+    <pre id="output">
+CAMERA OFFLINE
+PRESS START CAMERA</pre
+    >
+
+    <div class="controls">
+      <button id="start">START CAMERA</button>
+      <button id="stop">STOP</button>
+      <button id="copy">COPY ASCII</button>
+
+      <label>
+        Resolution
+        <input id="resolution" type="range" min="40" max="220" value="120" />
+      </label>
+
+      <label>
+        Contrast
+        <input
+          id="contrast"
+          type="range"
+          min="0.5"
+          max="2.5"
+          step="0.1"
+          value="1.3"
+        />
+      </label>
+
+      <label>
+        FPS
+        <select id="fps">
+          <option value="15">15</option>
+          <option value="24">24</option>
+          <option value="30" selected>30</option>
+          <option value="60">60</option>
+        </select>
+      </label>
+
+      <label>
+        <input type="checkbox" id="invert" checked />
+        Invert
+      </label>
+
+      <label>
+        <input type="checkbox" id="color" checked />
+        Color
+      </label>
+
+      <label>
+        Character size
+        <input type="range" id="charSize" min="6" max="32" value="7" step="1" />
+        <span id="charSizeValue">7px</span>
+      </label>
+
+      <label>
+        Characters
+        <input
+          type="text"
+          id="characters"
+          value=" .'`^,:;Il!i><~+_-?][}{1)(|\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
+          placeholder="Enter ASCII characters"
+        />
+      </label>
+    </div>
+
+    <div id="status">Waiting for camera permission...</div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
